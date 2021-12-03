@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import checkmonths from "../src/state-functions/checkMonths/checkMonths";
+import checkMonths from "../src/state-functions/checkMonths/checkMonths";
 import formatData from "./state-functions/formatData/formatData";
 import tableData from "../src/data/customers.js";
 import addTransactions from "../src/state-functions/addTransaction/addTransactions.js";
@@ -10,8 +10,9 @@ function App() {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
+    //simulating API call
     getCustomers(tableData)
-      .then((res) => checkmonths(res))
+      .then((res) => checkMonths(res))
       .then((threeMonths) => addTransactions(threeMonths))
       .then((finalUsers) => {
         const data = formatData(finalUsers);
