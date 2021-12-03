@@ -15,12 +15,9 @@ const addTransactions = (threeMonths) => {
     "November",
     "December",
   ];
-  threeMonths.forEach((transaction) => {
-    transaction["points"] = pointCalculator(transaction.amountSpent);
-  });
-
   let finalUsers = {};
   threeMonths.forEach((transaction) => {
+    transaction["points"] = pointCalculator(transaction.amountSpent);
     let month = transaction.date.split("-")[1];
     let id = transaction.id;
 
