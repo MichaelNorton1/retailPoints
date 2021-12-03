@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import "./modal.css";
 
-const Modal = ({ history, style, setStyle }) => {
+const Modal = ({ transactionHistory, style, setStyle }) => {
   const handleClose = () => {
     setStyle("hidden");
   };
@@ -15,9 +15,9 @@ const Modal = ({ history, style, setStyle }) => {
       <div className={style}>
         <div className="content">
           <div className="header">
-            <h4 className="title">{history.name}</h4>
+            <h4 className="title">{transactionHistory.name}</h4>
           </div>
-          {history.data.transactions.map((each, key) => {
+          {transactionHistory.data.transactions.map((each, key) => {
             return (
               <div
                 key={key}

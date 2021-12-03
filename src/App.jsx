@@ -13,8 +13,9 @@ function App() {
     getCustomers(tableData)
       .then((res) => checkmonths(res))
       .then((threeMonths) => addTransactions(threeMonths))
-      .then((finalUsers) => formatData(finalUsers))
-      .then((data) => {
+      .then((finalUsers) => {
+        const data = formatData(finalUsers);
+
         setCustomers(data);
       });
   }, []);

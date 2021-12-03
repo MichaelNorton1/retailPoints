@@ -2,17 +2,21 @@ import { useState } from "react";
 import Modal from "../modal/Modal";
 import "../rows/rows.css";
 const Rows = ({ customers }) => {
-  const [history, setHistory] = useState(null);
+  const [transactionHistory, setTransactionHistory] = useState(null);
   const [style, setStyle] = useState("hidden");
 
   const openModal = (customer) => {
-    setHistory(customer);
+    setTransactionHistory(customer);
 
     setStyle("modal");
   };
   return (
     <tbody>
-      <Modal setStyle={setStyle} style={style} history={history}></Modal>
+      <Modal
+        setStyle={setStyle}
+        style={style}
+        transactionHistory={transactionHistory}
+      ></Modal>
       {customers.map((customer) => {
         return (
           <tr key={customer.id} className="rows">
