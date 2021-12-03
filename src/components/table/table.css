@@ -1,0 +1,9 @@
+.columns {
+  border: 3px solid;
+  padding: 5px;
+}
+
+.table {
+  position: fixed;
+  width: 100%;
+}
