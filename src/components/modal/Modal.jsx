@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import "./modal.css";
-
+import monthlyPoints from "./monthlyPoints/monthlyPoints.js";
 const Modal = ({ transactionHistory, style, setStyle }) => {
   const handleClose = () => {
     setStyle("hidden");
@@ -9,6 +9,9 @@ const Modal = ({ transactionHistory, style, setStyle }) => {
   if (style === "hidden") {
     return null;
   }
+
+  const months = monthlyPoints(transactionHistory);
+
   return createPortal(
     <>
       <div className="back"></div>
@@ -17,7 +20,9 @@ const Modal = ({ transactionHistory, style, setStyle }) => {
           <div className="header">
             <h4 className="title">{transactionHistory.name}</h4>
           </div>
-          {transactionHistory.data.transactions.map((each, key) => {
+          <div className="body">Months: {months}</div>
+          <h3>All Transactions</h3>
+          {transactionHistory.data.total.map((each, key) => {
             return (
               <div
                 key={key}

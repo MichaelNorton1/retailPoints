@@ -1,21 +1,44 @@
 import pointCalculator from "../pointCalculator/pointCalculator.js";
 
 const addTransactions = (threeMonths) => {
+  const months = [
+    "January",
+    "Feburary",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   threeMonths.forEach((transaction) => {
     transaction["points"] = pointCalculator(transaction.amountSpent);
   });
 
   let finalUsers = {};
   threeMonths.forEach((transaction) => {
+    let month = transaction.date.split("-")[1];
     let id = transaction.id;
+
     if (finalUsers[id] !== undefined) {
-      finalUsers[id].points += transaction.points;
-      finalUsers[id].transactions.push(transaction);
+      finalUsers[id].transactions.push({
+        month: months[month - 1],
+        points: transaction.points,
+      });
+      finalUsers[id].totalPoints += transaction.points;
+      finalUsers[id].total.push(transaction);
     } else {
       finalUsers[transaction.id] = {
         name: transaction.name,
-        points: transaction.points,
-        transactions: [transaction],
+        totalPoints: transaction.points,
+        transactions: [
+          { month: months[month - 1], points: transaction.points },
+        ],
+        total: [transaction],
       };
     }
   });

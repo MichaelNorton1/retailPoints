@@ -6,6 +6,7 @@ const checkMonths = (tableData) => {
 
     return transactionDate > threeMonthsAgo._d;
   });
+
   return threeMonthsRange;
 };
 

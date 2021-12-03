@@ -7,6 +7,6 @@ test("returns a key value pair in the return object", () => {
     { name: "Mark", id: 2, date: "2021-11-21", amountSpent: 111 },
   ];
 
-  expect(addTransactions(input)[2].points).toEqual(72);
-  expect(addTransactions(input)[1].points).toEqual(320);
+  expect(addTransactions(input)[2].totalPoints).toEqual(72);
+  expect(addTransactions(input)[1].totalPoints).toEqual(320);
 });

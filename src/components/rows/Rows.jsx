@@ -26,7 +26,7 @@ const Rows = ({ customers }) => {
               <button onClick={() => openModal(customer)}> Show All </button>
             </td>
 
-            <td className="rows show">{customer.data.points}</td>
+            <td className="rows show">{customer.data.totalPoints}</td>
           </tr>
         );
       })}

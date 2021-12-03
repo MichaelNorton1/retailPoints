@@ -1,4 +1,4 @@
-import checkMonth from "../state-functions/checkMonths/checkMonths";
+import checkMonths from "../state-functions/checkMonths/checkMonths";
 test("check if date is more than three months ago", () => {
   const input = {
     transactions: [
@@ -19,7 +19,7 @@ test("check if date is more than three months ago", () => {
     ],
   };
 
-  expect(checkMonth(input).length).toBeGreaterThanOrEqual(
+  expect(checkMonths(input).length).toBeGreaterThanOrEqual(
     expectedOutput.transactions.length
   );
 });
