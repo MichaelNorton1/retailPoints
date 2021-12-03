@@ -22,7 +22,7 @@ function App() {
   }, []);
   return (
     <div>
-      <h1 style={{ textAlign: "left" }}>Retail Points</h1>
+      <h1 style={{ textAlign: "left" }}>Retail Points- Last three Months</h1>
       <Table className="top" customers={customers}></Table>
     </div>
   );
