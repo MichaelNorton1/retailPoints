@@ -9,7 +9,6 @@ const monthlyPoints = (transactionHistory) => {
   });
 
   return Object.keys(monthlyCount).map((month, i) => {
-    console.log(month);
     return (
       <div
         style={{ border: "1px solid", margin: "3px", padding: "2px" }}
