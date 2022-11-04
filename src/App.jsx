@@ -11,7 +11,7 @@ function App() {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
-    //simulating API call
+    //simulating API call------need to update dates
     getCustomers(tableData)
       .then((res) => checkMonths(res))
       .then((threeMonths) => addTransactions(threeMonths))
@@ -20,10 +20,12 @@ function App() {
 
         setCustomers(data);
       });
+    console.log(customers);
   }, []);
   return (
     <div>
       <h1 style={{ textAlign: "left" }}>Retail Points</h1>
+
       <Table className="top" customers={customers}></Table>
     </div>
   );
