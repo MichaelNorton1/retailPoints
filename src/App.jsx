@@ -20,7 +20,6 @@ function App() {
 
         setCustomers(data);
       });
-    console.log(customers);
   }, []);
   return (
     <div>
